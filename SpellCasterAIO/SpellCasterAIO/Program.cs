@@ -24,7 +24,6 @@ namespace SpellCasterAIO
             ModeManager.Initialize();
 
             Drawing.OnDraw += OnDraw;
-
         }
 
         private static void OnDraw(EventArgs args)

@@ -1,8 +1,8 @@
 ﻿using EloBuddy;
 using EloBuddy.SDK;
 
-// Using the config like this makes your life easier, trust me
 using Settings = SpellCasterAIO.Config.Modes.Combo;
+using Misc = SpellCasterAIO.Config.Modes.Misc;
 
 namespace SpellCasterAIO.Modes
 {
@@ -15,7 +15,9 @@ namespace SpellCasterAIO.Modes
 
         public override void Execute()
         {
-            var target = TargetSelector.GetTarget(Q.Range, DamageType.Mixed);
+            //Chat.Print(SpellManager.SpellNeedTarget(SpellSlot.W));
+            //Chat.Print(W.GetType().ToString());
+            var target = TargetSelector.GetTarget(Misc.RangeTarget, DamageType.Mixed);
             if (target == null) return;
 
             if (Q.IsReady() && target.IsValidTarget(Q.Range) && Settings.UseQ)

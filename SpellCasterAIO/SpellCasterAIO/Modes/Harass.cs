@@ -1,6 +1,8 @@
 ﻿using EloBuddy;
 using EloBuddy.SDK;
+
 using Settings = SpellCasterAIO.Config.Modes.Harass;
+using Misc = SpellCasterAIO.Config.Modes.Misc;
 
 namespace SpellCasterAIO.Modes
 {
@@ -13,7 +15,7 @@ namespace SpellCasterAIO.Modes
 
         public override void Execute()
         {
-            var target = TargetSelector.GetTarget(Q.Range, DamageType.Mixed);
+            var target = TargetSelector.GetTarget(Misc.RangeTarget, DamageType.Mixed);
             if (target == null) return;
 
             if (Q.IsReady() && target.IsValidTarget(Q.Range) && Settings.UseQ)

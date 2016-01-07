@@ -254,9 +254,6 @@ namespace SpellCasterAIO
                 static Misc()
                 {
                     _rangeTarget = MiscMenu.Add("rangeTargetSelector", new Slider("What range to get tagets ? (Default = 1200)", 1200, 600, 2000));
-                    _drawW = MiscMenu.Add("drawW", new CheckBox("Draw W"));
-                    _drawE = MiscMenu.Add("drawE", new CheckBox("Draw E"));
-                    _drawR = MiscMenu.Add("drawR", new CheckBox("Draw R"));
 
                 }
 

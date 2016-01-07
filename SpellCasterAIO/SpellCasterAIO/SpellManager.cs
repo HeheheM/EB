@@ -35,7 +35,7 @@ namespace SpellCasterAIO
                                 Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
                                 Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
@@ -55,7 +55,7 @@ namespace SpellCasterAIO
                                 W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
                                 W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
@@ -104,10 +104,6 @@ namespace SpellCasterAIO
                         break;
                 }
             }
-            Q = new Spell.Active(SpellSlot.Q, GetSpellRange(SpellSlot.Q));
-            W = new Spell.Active(SpellSlot.W, GetSpellRange(SpellSlot.W));
-            E = new Spell.Active(SpellSlot.E, GetSpellRange(SpellSlot.E));
-            R = new Spell.Targeted(SpellSlot.R, GetSpellRange(SpellSlot.R));
         }
 
         public static void Initialize()
@@ -120,7 +116,8 @@ namespace SpellCasterAIO
             Targeted,
             SkillShotCircular,
             SkillShotLinear,
-            SkillShotCone
+            SkillShotCone,
+            Null
         }
 
         private static uint GetSpellRange(SpellSlot slot)
@@ -157,7 +154,7 @@ namespace SpellCasterAIO
                 case SpellDataTargetType.LocationTunnel:
                     return Spells.SkillShotLinear;
             }
-            return Spells.Active;
+            return Spells.SkillShotLinear;
         }
 
         public static bool SpellNeedTarget(SpellSlot slot)
