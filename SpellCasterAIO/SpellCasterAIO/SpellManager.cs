@@ -110,7 +110,7 @@ namespace SpellCasterAIO
         {
         }
 
-        private enum Spells
+        public enum Spells
         {
             Active,
             Targeted,
@@ -120,7 +120,7 @@ namespace SpellCasterAIO
             Null
         }
 
-        private static uint GetSpellRange(SpellSlot slot)
+        public static uint GetSpellRange(SpellSlot slot)
         {
             if (Player.Instance.Spellbook.GetSpell(slot).SData.CastRangeDisplayOverride == 0)
             {
@@ -129,7 +129,7 @@ namespace SpellCasterAIO
             return (uint) Player.Instance.Spellbook.GetSpell(slot).SData.CastRangeDisplayOverride;
         }
 
-        private static Spells GetSpellType(SpellSlot slot)
+        public static Spells GetSpellType(SpellSlot slot)
         {
             switch (Player.Instance.Spellbook.GetSpell(slot).SData.TargettingType)
             {

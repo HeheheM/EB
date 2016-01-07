@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Rendering;
@@ -24,6 +25,18 @@ namespace SpellCasterAIO
             ModeManager.Initialize();
 
             Drawing.OnDraw += OnDraw;
+
+            /*
+            foreach (
+                var spell in
+                    Player.Instance.Spellbook.Spells.Where(
+                        s => s.Slot == SpellSlot.Q || s.Slot == SpellSlot.W || s.Slot == SpellSlot.E ||
+                             s.Slot == SpellSlot.R))
+            {
+                Chat.Print("SpellName = " + spell.Name + " SCAIOrange = " + SpellManager.GetSpellRange(spell.Slot) +
+                           " SCAIOspelltype = " + SpellManager.GetSpellType(spell.Slot));
+            }
+            */
         }
 
         private static void OnDraw(EventArgs args)

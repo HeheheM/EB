@@ -15,14 +15,19 @@ namespace SpellCasterAIO.Modes
 
         public override void Execute()
         {
-            var target = EntityManager.MinionsAndMonsters.GetJungleMonsters().OrderBy(m => m.Health).FirstOrDefault();
+            var target = EntityManager.MinionsAndMonsters.GetLaneMinions().OrderBy(m => m.Health).FirstOrDefault(m => m.IsValidTarget(1200));
             if (target == null) return;
 
-            if (Q.IsReady() && target.IsValidTarget(Q.Range) && Settings.UseQ)
+            var targetQ =
+                EntityManager.MinionsAndMonsters.GetLaneMinions()
+                    .OrderByDescending(m => m.Health)
+                    .FirstOrDefault(m => m.Health <= Player.Instance.GetSpellDamage(m, SpellSlot.Q) && m.IsValidTarget(Q.Range));
+
+            if (targetQ != null && Q.IsReady() && targetQ.IsValidTarget(Q.Range) && Settings.UseQ)
             {
                 if (SpellManager.SpellNeedTarget(SpellSlot.Q))
                 {
-                    Q.Cast(target);
+                    Q.Cast(targetQ);
                 }
                 else
                 {
@@ -30,11 +35,16 @@ namespace SpellCasterAIO.Modes
                 }
             }
 
-            if (W.IsReady() && target.IsValidTarget(W.Range) && Settings.UseW)
+            var targetW =
+                EntityManager.MinionsAndMonsters.GetLaneMinions()
+                    .OrderByDescending(m => m.Health)
+                    .FirstOrDefault(m => m.Health <= Player.Instance.GetSpellDamage(m, SpellSlot.W) && m.IsValidTarget(W.Range));
+
+            if (targetW != null && W.IsReady() && targetW.IsValidTarget(W.Range) && Settings.UseW)
             {
                 if (SpellManager.SpellNeedTarget(SpellSlot.W))
                 {
-                    W.Cast(target);
+                    W.Cast(targetW);
                 }
                 else
                 {
@@ -42,11 +52,16 @@ namespace SpellCasterAIO.Modes
                 }
             }
 
-            if (E.IsReady() && target.IsValidTarget(E.Range) && Settings.UseE)
+            var targetE =
+                EntityManager.MinionsAndMonsters.GetLaneMinions()
+                    .OrderByDescending(m => m.Health)
+                    .FirstOrDefault(m => m.Health <= Player.Instance.GetSpellDamage(m, SpellSlot.E) && m.IsValidTarget(E.Range));
+
+            if (targetE != null && E.IsReady() && targetE.IsValidTarget(E.Range) && Settings.UseE)
             {
                 if (SpellManager.SpellNeedTarget(SpellSlot.E))
                 {
-                    E.Cast(target);
+                    E.Cast(targetE);
                 }
                 else
                 {
@@ -54,11 +69,16 @@ namespace SpellCasterAIO.Modes
                 }
             }
 
-            if (R.IsReady() && target.IsValidTarget(R.Range) && Settings.UseR)
+            var targetR =
+                EntityManager.MinionsAndMonsters.GetLaneMinions()
+                    .OrderByDescending(m => m.Health)
+                    .FirstOrDefault(m => m.Health <= Player.Instance.GetSpellDamage(m, SpellSlot.R) && m.IsValidTarget(R.Range));
+
+            if (targetR != null && R.IsReady() && targetR.IsValidTarget(R.Range) && Settings.UseR)
             {
                 if (SpellManager.SpellNeedTarget(SpellSlot.R))
                 {
-                    R.Cast(target);
+                    R.Cast(targetR);
                 }
                 else
                 {

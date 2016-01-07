@@ -19,6 +19,7 @@ namespace SpellCasterAIO
             // Initialize the menu
             Menu = MainMenu.AddMenu(MenuName, MenuName.ToLower());
             Menu.AddGroupLabel("SpellCasterAIO");
+            Menu.AddLabel("If any skill range (or anything) change in game press F8 to update the skill settings");
             Menu.AddLabel("Made By: MarioGK", 50);
 
             // Initialize the modes
@@ -170,7 +171,7 @@ namespace SpellCasterAIO
                 static LaneClear()
                 {
                     // Initialize the menu values
-                    ModesMenu.AddGroupLabel("LaneClear");
+                    ModesMenu.AddGroupLabel("LaneClear/JungleClear");
                     _useQ = ModesMenu.Add("laneQ", new CheckBox("Use Q"));
                     _useW = ModesMenu.Add("laneW", new CheckBox("Use W"));
                     _useE = ModesMenu.Add("laneE", new CheckBox("Use E"));

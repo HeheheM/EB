@@ -15,8 +15,6 @@ namespace SpellCasterAIO.Modes
 
         public override void Execute()
         {
-            //Chat.Print(SpellManager.SpellNeedTarget(SpellSlot.W));
-            //Chat.Print(W.GetType().ToString());
             var target = TargetSelector.GetTarget(Misc.RangeTarget, DamageType.Mixed);
             if (target == null) return;
 
