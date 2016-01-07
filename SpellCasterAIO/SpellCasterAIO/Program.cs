@@ -11,7 +11,6 @@ namespace SpellCasterAIO
     public static class Program
     {
         // ReSharper disable once MemberCanBePrivate.Global
-        public const string ChampName = "";
 
         public static void Main(string[] args)
         {
@@ -20,16 +19,12 @@ namespace SpellCasterAIO
 
         private static void OnLoadingComplete(EventArgs args)
         {
-            if (Player.Instance.ChampionName == ChampName)
-            {
-                return;
-            }
-
             Config.Initialize();
             SpellManager.Initialize();
             ModeManager.Initialize();
 
             Drawing.OnDraw += OnDraw;
+
         }
 
         private static void OnDraw(EventArgs args)

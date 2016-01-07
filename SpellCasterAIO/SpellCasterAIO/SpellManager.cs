@@ -75,7 +75,7 @@ namespace SpellCasterAIO
                                 E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
                                 E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
@@ -95,7 +95,7 @@ namespace SpellCasterAIO
                                 R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
                                 R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
@@ -125,7 +125,7 @@ namespace SpellCasterAIO
 
         private static uint GetSpellRange(SpellSlot slot)
         {
-            if (Player.Instance.Spellbook.GetSpell(slot).SData.CastRangeDisplayOverride <= 0)
+            if (Player.Instance.Spellbook.GetSpell(slot).SData.CastRangeDisplayOverride == 0)
             {
                 return (uint) Player.Instance.Spellbook.GetSpell(slot).SData.CastRange;
             }
