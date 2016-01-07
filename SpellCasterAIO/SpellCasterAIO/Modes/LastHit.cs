@@ -3,6 +3,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 
 using Settings = SpellCasterAIO.Config.Modes.LastHit;
+using Misc = SpellCasterAIO.Config.Modes.Misc;
 
 namespace SpellCasterAIO.Modes
 {
@@ -15,7 +16,7 @@ namespace SpellCasterAIO.Modes
 
         public override void Execute()
         {
-            var target = EntityManager.MinionsAndMonsters.GetLaneMinions().OrderBy(m => m.Health).FirstOrDefault(m => m.IsValidTarget(1200));
+            var target = EntityManager.MinionsAndMonsters.GetLaneMinions().OrderBy(m => m.Health).FirstOrDefault(m => m.IsValidTarget(Misc.RangeTarget));
             if (target == null) return;
 
             var targetQ =
