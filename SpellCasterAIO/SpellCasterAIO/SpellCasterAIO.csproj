@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActivatorHu3">
-      <HintPath>..\..\..\Beta\ActivatorHu3\ActivatorHu3\bin\Debug\ActivatorHu3.dll</HintPath>
-    </Reference>
     <Reference Include="EloBuddy">
       <HintPath>..\..\..\..\..\Desktop\Hu3\EloBuddy\System\EloBuddy.dll</HintPath>
     </Reference>

@@ -29,8 +29,6 @@ namespace SpellCasterAIO
             SpellManager.Initialize();
             ModeManager.Initialize();
 
-            ActivatorHu3.Activator.Init();
-
             Drawing.OnDraw += OnDraw;
         }
 

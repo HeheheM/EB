@@ -6,3 +6,10 @@ C:\Users\Mario\Documents\GitHub\SpellCasterAIO\SpellCasterAIO\bin\Debug\Activato
 C:\Users\Mario\Documents\GitHub\SpellCasterAIO\SpellCasterAIO\obj\Debug\SpellCasterAIO.csprojResolveAssemblyReference.cache
 C:\Users\Mario\Documents\GitHub\SpellCasterAIO\SpellCasterAIO\obj\Debug\SpellCasterAIO.exe
 C:\Users\Mario\Documents\GitHub\SpellCasterAIO\SpellCasterAIO\obj\Debug\SpellCasterAIO.pdb
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\SpellCasterAIO.exe.config
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\obj\Debug\SpellCasterAIO.exe
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\obj\Debug\SpellCasterAIO.pdb
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\SpellCasterAIO.exe
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\SpellCasterAIO.pdb
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\obj\Debug\SpellCasterAIO.csprojResolveAssemblyReference.cache
