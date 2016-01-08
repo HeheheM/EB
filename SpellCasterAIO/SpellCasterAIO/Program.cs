@@ -26,7 +26,7 @@ namespace SpellCasterAIO
 
             Drawing.OnDraw += OnDraw;
 
-            
+            /*
             foreach (
                 var spell in
                     Player.Instance.Spellbook.Spells.Where(
@@ -36,6 +36,7 @@ namespace SpellCasterAIO
                 Chat.Print("SpellName = " + spell.Name + " SCAIOrange = " + SpellManager.GetSpellRange(spell.Slot) +
                            " SCAIOspelltype = " + SpellManager.GetSpellType(spell.Slot) + " SpellDelay = " + (int)spell.SData.CastTime * 1000);
             }
+            */
             
         }
 
