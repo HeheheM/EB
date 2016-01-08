@@ -32,13 +32,16 @@ namespace SpellCasterAIO
                                 Q = new Spell.Targeted(spell.Slot, GetSpellRange(SpellSlot.Q));
                                 break;
                             case Spells.SkillShotCircular:
-                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
+                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
-                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                Q = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.Q), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                break;
+                            case Spells.Null:
+                                Chat.Print("Error please restart the game");
                                 break;
                         }
                         break;
@@ -52,13 +55,16 @@ namespace SpellCasterAIO
                                 W = new Spell.Targeted(spell.Slot, GetSpellRange(SpellSlot.W));
                                 break;
                             case Spells.SkillShotCircular:
-                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
+                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
-                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                W = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.W), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                break;
+                            case Spells.Null:
+                                Chat.Print("Error please restart the game");
                                 break;
                         }
                         break;
@@ -72,13 +78,16 @@ namespace SpellCasterAIO
                                 E = new Spell.Targeted(spell.Slot, GetSpellRange(SpellSlot.E));
                                 break;
                             case Spells.SkillShotCircular:
-                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
+                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
-                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                E = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.E), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                break;
+                            case Spells.Null:
+                                Chat.Print("Error please restart the game");
                                 break;
                         }
                         break;
@@ -92,13 +101,16 @@ namespace SpellCasterAIO
                                 R = new Spell.Targeted(spell.Slot, GetSpellRange(SpellSlot.R));
                                 break;
                             case Spells.SkillShotCircular:
-                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
+                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastRadius);
                                 break;
                             case Spells.SkillShotLinear:
-                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
+                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.LineWidth);
                                 break;
                             case Spells.SkillShotCone:
-                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 250, (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                R = new Spell.Skillshot(spell.Slot, GetSpellRange(SpellSlot.R), SkillShotType.Linear, 1000 * Math.Abs((int)spell.SData.CastTime), (int)spell.SData.MissileSpeed, (int)spell.SData.CastConeAngle);
+                                break;
+                            case Spells.Null:
+                                Chat.Print("Error please restart the game");
                                 break;
                         }
                         break;
@@ -154,7 +166,7 @@ namespace SpellCasterAIO
                 case SpellDataTargetType.LocationTunnel:
                     return Spells.SkillShotLinear;
             }
-            return Spells.SkillShotLinear;
+            return Spells.Null;
         }
 
         public static bool SpellNeedTarget(SpellSlot slot)

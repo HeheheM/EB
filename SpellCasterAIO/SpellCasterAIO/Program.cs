@@ -26,7 +26,7 @@ namespace SpellCasterAIO
 
             Drawing.OnDraw += OnDraw;
 
-            /*
+            
             foreach (
                 var spell in
                     Player.Instance.Spellbook.Spells.Where(
@@ -34,31 +34,39 @@ namespace SpellCasterAIO
                              s.Slot == SpellSlot.R))
             {
                 Chat.Print("SpellName = " + spell.Name + " SCAIOrange = " + SpellManager.GetSpellRange(spell.Slot) +
-                           " SCAIOspelltype = " + SpellManager.GetSpellType(spell.Slot));
+                           " SCAIOspelltype = " + SpellManager.GetSpellType(spell.Slot) + " SpellDelay = " + (int)spell.SData.CastTime * 1000);
             }
-            */
+            
         }
 
         private static void OnDraw(EventArgs args)
         {
-            if (Settings.DrawQ)
+            try
             {
-                new Circle { Color = SpellManager.Q.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.Q.Range }.Draw(Player.Instance.Position);
-            }
+                if (Settings.DrawQ)
+                {
+                    new Circle { Color = SpellManager.Q.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.Q.Range }.Draw(Player.Instance.Position);
+                }
 
-            if (Settings.DrawW)
-            {
-                new Circle { Color = SpellManager.W.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.W.Range }.Draw(Player.Instance.Position);
-            }
+                if (Settings.DrawW)
+                {
+                    new Circle { Color = SpellManager.W.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.W.Range }.Draw(Player.Instance.Position);
+                }
 
-            if (Settings.DrawE)
-            {
-                new Circle { Color = SpellManager.E.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.E.Range }.Draw(Player.Instance.Position);
-            }
+                if (Settings.DrawE)
+                {
+                    new Circle { Color = SpellManager.E.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.E.Range }.Draw(Player.Instance.Position);
+                }
 
-            if (Settings.DrawR)
+                if (Settings.DrawR)
+                {
+                    new Circle { Color = SpellManager.R.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.R.Range }.Draw(Player.Instance.Position);
+                }
+            }
+            catch (Exception)
             {
-                new Circle { Color = SpellManager.R.IsReady() ? Color.DodgerBlue : Color.Red, BorderWidth = 1f, Radius = SpellManager.R.Range }.Draw(Player.Instance.Position);
+                
+                throw;
             }
         }
     }

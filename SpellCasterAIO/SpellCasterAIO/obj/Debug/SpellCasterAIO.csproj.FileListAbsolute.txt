@@ -13,3 +13,7 @@ C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\Spell
 C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\SpellCasterAIO.pdb
 C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\obj\Debug\SpellCasterAIO.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\EloBuddy.dll
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Mario\Documents\GitHub\EB\SpellCasterAIO\SpellCasterAIO\bin\Debug\SharpDX.dll
