@@ -20,6 +20,13 @@ namespace MyBitch
         {
             Game.OnTick += Game_OnTick;
             Drawing.OnDraw += Drawing_OnDraw;
+            Player.OnSpawn += Player_OnSpawn;
+        }
+
+        private static void Player_OnSpawn(Obj_AI_Base sender)
+        {
+            var place1 = new Vector3(6900f, 1800f, -189f);
+            Player.IssueOrder(GameObjectOrder.MoveTo, place1);
         }
 
         private static void Game_OnTick(EventArgs args)
