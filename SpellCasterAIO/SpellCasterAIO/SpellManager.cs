@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
@@ -134,7 +133,7 @@ namespace SpellCasterAIO
 
         public static uint GetSpellRange(SpellSlot slot)
         {
-            if (Player.Instance.Spellbook.GetSpell(slot).SData.CastRangeDisplayOverride == 0)
+            if (Player.Instance.Spellbook.GetSpell(slot).SData.CastRangeDisplayOverride >= 0)
             {
                 return (uint) Player.Instance.Spellbook.GetSpell(slot).SData.CastRange;
             }
