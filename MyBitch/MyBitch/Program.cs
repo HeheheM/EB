@@ -26,8 +26,8 @@ namespace MyBitch
         {
             var place1 = new Vector3(6900f, 1800f, -189f);
             var place2 = new Vector3(7900f, 1800f, -189f);
-            var place3 = new Vector3(7900f, 1700f, -189f);
-            var place4 = new Vector3(6900f, 1700f, -189f);
+            var place3 = new Vector3(7900f, 2000f, -189f);
+            var place4 = new Vector3(6900f, 2000f, -189f);
 
             if (Player.Instance.Distance(place1) < 10)
             {
@@ -53,7 +53,7 @@ namespace MyBitch
         private static void Drawing_OnDraw(EventArgs args)
         {
             var place1 = new Vector3(6900f, 1800f, -189f);
-            Drawing.DrawCircle(place1, 60f, Color.Red);
+            Drawing.DrawCircle(place1, 10f, Color.Red);
         }
     }
 }
