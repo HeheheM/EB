@@ -26,7 +26,7 @@ namespace MyBitch
             var place2 = new Vector3(7000f, 1806f, -189f);
 
             Player.IssueOrder(GameObjectOrder.MoveTo, place1);
-            Core.DelayAction(()=> Player.IssueOrder(GameObjectOrder.MoveTo, place1), 900);
+            Core.DelayAction(()=> Player.IssueOrder(GameObjectOrder.MoveTo, place2), 900);
         }
     }
 }
