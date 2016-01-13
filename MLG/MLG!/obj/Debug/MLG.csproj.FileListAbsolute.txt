@@ -11,3 +11,6 @@ C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\obj\Debug\MLG.Resource1.resources
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\obj\Debug\MLG.csproj.GenerateResource.Cache
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\obj\Debug\MLG.exe
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\obj\Debug\MLG.pdb
+C:\Users\Mario\Documents\GitHub\EB\MLG\MLG!\bin\Debug\MLG.exe.config
+C:\Users\Mario\Documents\GitHub\EB\MLG\MLG!\obj\Debug\MLG.exe
+C:\Users\Mario\Documents\GitHub\EB\MLG\MLG!\obj\Debug\MLG.pdb
