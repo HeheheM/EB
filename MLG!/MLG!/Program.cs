@@ -42,7 +42,7 @@ namespace MLG
 
             OhMyGodSound = new SoundPlayer(Resource1.ohmygod);
 
-            FuckYeahSound = new SoundPlayer(Resource1.fuckyeah);
+            FuckYeahSound = new SoundPlayer(Resource1.fuck);
 
             #endregion Sounds
             #region Images

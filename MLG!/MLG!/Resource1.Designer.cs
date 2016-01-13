@@ -73,9 +73,9 @@ namespace MLG {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream fuckyeah {
+        internal static System.IO.UnmanagedMemoryStream fuck {
             get {
-                return ResourceManager.GetStream("fuckyeah", resourceCulture);
+                return ResourceManager.GetStream("fuck", resourceCulture);
             }
         }
         
