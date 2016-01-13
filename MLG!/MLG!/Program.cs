@@ -66,7 +66,7 @@ namespace MLG
         {
             var caster = sender as AIHeroClient;
             var target = args.Target as AIHeroClient;
-            if (caster == null || target == null) return;
+            if (caster == null || target == null || sender.Distance(Player.Instance) > 1500) return;
 
             HitMarkPosition = args.Target.Position.WorldToScreen();
             HitMarkerSound.Play();

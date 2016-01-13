@@ -19,11 +19,11 @@ namespace MyBitch
         private static void Main(string[] args)
         {
             Loading.OnLoadingComplete += Loading_OnLoadingComplete;
-            Player.IssueOrder(GameObjectOrder.MoveTo, place1);
         }
 
         private static void Loading_OnLoadingComplete(EventArgs args)
         {
+            Player.IssueOrder(GameObjectOrder.MoveTo, place1);
             Game.OnTick += Game_OnTick;
             Drawing.OnDraw += Drawing_OnDraw;
         }
