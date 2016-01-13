@@ -63,9 +63,9 @@ namespace MLG {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hitmarker {
+        internal static System.Drawing.Bitmap hitmark {
             get {
-                object obj = ResourceManager.GetObject("hitmarker", resourceCulture);
+                object obj = ResourceManager.GetObject("hitmark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +76,15 @@ namespace MLG {
         internal static System.IO.UnmanagedMemoryStream hitmarkersound {
             get {
                 return ResourceManager.GetStream("hitmarkersound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ohmygod {
+            get {
+                return ResourceManager.GetStream("ohmygod", resourceCulture);
             }
         }
         
