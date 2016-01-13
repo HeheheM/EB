@@ -55,7 +55,7 @@ namespace MLG
             HitMarkPosition = args.Target.Position.WorldToScreen();
             HitMarkerSound.Play();
             CanDraw = true;
-            Core.DelayAction(() => CanDraw = false, 250);
+            Core.DelayAction(() => CanDraw = false, 330);
         }
 
         private static void Game_OnNotify(GameNotifyEventArgs args)
