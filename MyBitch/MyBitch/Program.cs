@@ -23,14 +23,13 @@ namespace MyBitch
 
         private static void Loading_OnLoadingComplete(EventArgs args)
         {
-            Player.IssueOrder(GameObjectOrder.MoveTo, place1);
             Game.OnTick += Game_OnTick;
             Drawing.OnDraw += Drawing_OnDraw;
         }
 
         private static void Game_OnTick(EventArgs args)
         {
-            if (Player.Instance.Distance(place1) < 1500)
+            if (Player.Instance.Distance(place1) > 2000)
             {
                 Player.IssueOrder(GameObjectOrder.MoveTo, place1);
             }
@@ -59,7 +58,7 @@ namespace MyBitch
 
         private static void Drawing_OnDraw(EventArgs args)
         {
-            new Circle { Color = Color.Red, BorderWidth = 4f, Radius = 10 }.Draw(Player.Instance.Position);
+            new Circle { Color = Color.Red, BorderWidth = 4f, Radius = 10 }.Draw(place1);
         }
     }
 }
