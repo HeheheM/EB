@@ -9,7 +9,7 @@ namespace MLG
 {
     internal class Program
     {
-        private static Sprite HitMarker;
+        //private static Sprite HitMarker;
         #region Sounds
         private static SoundPlayer WOWSound;
         private static SoundPlayer HitMarkerSound;
@@ -31,11 +31,13 @@ namespace MLG
             SadMusicSound = new SoundPlayer(Resource1.sadmusic);
             #endregion Sounds
 
-            TextureLoader.Load("hitmarker", Resource1.hitmarker);
-            HitMarker = new Sprite(() => TextureLoader["hitmarker"]);
+            //TextureLoader.Load("hitmarker", Resource1.hitmarker);
+            //HitMarker = new Sprite(() => TextureLoader["hitmarker"]);
 
             Game.OnNotify += Game_OnNotify;
             AIHeroClient.OnDeath += AIHeroClient_OnDeath;
+
+            Chat.Print("Loaded");
         }
 
         private static void Game_OnNotify(GameNotifyEventArgs args)
@@ -48,13 +50,14 @@ namespace MLG
 
         private static void AIHeroClient_OnDeath(Obj_AI_Base sender, OnHeroDeathEventArgs args)
         {
-            var pos = sender.Position;
-            HitMarkerSound.Play();
-            HitMarker.Draw(pos.To2D());
             if (sender.IsMe)
             {
+                Chat.Print("SadMusic");
                 SadMusicSound.Play();
             }
+            Chat.Print("HitMarker");
+            HitMarkerSound.Play();
+            //HitMarker.Draw(pos.To2D());
         }
     }
 }
