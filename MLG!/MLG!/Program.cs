@@ -71,7 +71,7 @@ namespace MLG
             HitMarkPosition = args.Target.Position.WorldToScreen();
             HitMarkerSound.Play();
             CanDrawHitMarker = true;
-            Core.DelayAction(() => CanDrawHitMarker = false, 330);
+            Core.DelayAction(() => CanDrawHitMarker = false, 200);
         }
 
         private static void Game_OnNotify(GameNotifyEventArgs args)

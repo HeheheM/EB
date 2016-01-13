@@ -86,7 +86,7 @@
     <None Include="Resources\brazzer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fuckyeah.wav" />
+    <None Include="Resources\fuck.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
