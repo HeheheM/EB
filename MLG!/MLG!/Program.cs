@@ -55,7 +55,7 @@ namespace MLG
             HitMarkPosition = args.Target.Position.WorldToScreen();
             HitMarkerSound.Play();
             CanDraw = true;
-            Core.DelayAction(() => CanDraw = false, 900);
+            Core.DelayAction(() => CanDraw = false, 250);
         }
 
         private static void Game_OnNotify(GameNotifyEventArgs args)
@@ -88,7 +88,7 @@ namespace MLG
         {
             if (CanDraw)
             {
-                var pos = new Vector2(HitMarkPosition.X - Resource1.hitmark.Height / 2, HitMarkPosition.Y - Resource1.hitmark.Width / 2);
+                var pos = new Vector2(HitMarkPosition.X - Resource1.hitmark.Width / 2, HitMarkPosition.Y - Resource1.hitmark.Height / 2 -30);
                 HitMarker.Draw(pos);
             }
         }

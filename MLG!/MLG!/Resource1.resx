@@ -124,6 +124,9 @@
   <data name="hitmarkersound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\hitmarkersound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ohmygod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ohmygod.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="sadmusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\sadmusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

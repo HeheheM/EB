@@ -80,16 +80,16 @@
     <None Include="Resources\WOWwav.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hitmarkersound.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\sadmusic.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hitmark.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\banana.gif" />
+    <None Include="Resources\ohmygod.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hitmarkersound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
