@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Media;
 using EloBuddy;
 using EloBuddy.SDK;
@@ -13,6 +12,7 @@ namespace MLG
     {
         private static Sprite HitMarker;
         private static bool CanDraw;
+        private static Vector2 HitMarkPosition;
         #region Sounds
         private static SoundPlayer WOWSound;
         private static SoundPlayer HitMarkerSound;
@@ -48,6 +48,7 @@ namespace MLG
 
         private static void Obj_AI_Base_OnDamage(AttackableUnit sender, AttackableUnitDamageEventArgs args)
         {
+            HitMarkPosition = sender.Position.WorldToScreen();
             HitMarkerSound.Play();
             CanDraw = true;
             Core.DelayAction(() => CanDraw = false, 700);
@@ -83,7 +84,7 @@ namespace MLG
         {
             if (CanDraw)
             {
-                var pos = new Vector2(Player.Instance.Position.WorldToScreen().X - Resource1.hitmark.Height / 2, Player.Instance.Position.WorldToScreen().Y - Resource1.hitmark.Width / 2);
+                var pos = new Vector2(HitMarkPosition.X - Resource1.hitmark.Height / 2, HitMarkPosition.Y - Resource1.hitmark.Width / 2);
                 HitMarker.Draw(pos);
             }
         }
