@@ -63,6 +63,25 @@ namespace MLG {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brazzer {
+            get {
+                object obj = ResourceManager.GetObject("brazzer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream fuckyeah {
+            get {
+                return ResourceManager.GetStream("fuckyeah", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hitmark {
             get {
                 object obj = ResourceManager.GetObject("hitmark", resourceCulture);

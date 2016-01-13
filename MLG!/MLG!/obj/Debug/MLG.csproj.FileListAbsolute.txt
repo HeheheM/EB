@@ -2,7 +2,6 @@ C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\MLG.exe.config
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\MLG.exe
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\MLG.pdb
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\EloBuddy.dll
-C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\EloBuddy.Sandbox.dll
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\EloBuddy.SDK.dll
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\SharpDX.Direct3D9.dll
 C:\Users\Mario\Documents\GitHub\EB\MLG!\MLG!\bin\Debug\SharpDX.dll
