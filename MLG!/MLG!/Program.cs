@@ -43,15 +43,19 @@ namespace MLG
             Game.OnNotify += Game_OnNotify;
             Obj_AI_Base.OnPlayAnimation += Obj_AI_Base_OnPlayAnimation;
             Drawing.OnEndScene += Drawing_OnEndScene;
-            Obj_AI_Base.OnDamage += Obj_AI_Base_OnDamage;
+            AttackableUnit.OnDamage += Obj_AI_Base_OnDamage;
         }
 
         private static void Obj_AI_Base_OnDamage(AttackableUnit sender, AttackableUnitDamageEventArgs args)
         {
-            HitMarkPosition = sender.Position.WorldToScreen();
+            var caster = sender as AIHeroClient;
+            var target = args.Target as AIHeroClient;
+            if (caster == null || target == null) return;
+
+            HitMarkPosition = args.Target.Position.WorldToScreen();
             HitMarkerSound.Play();
             CanDraw = true;
-            Core.DelayAction(() => CanDraw = false, 700);
+            Core.DelayAction(() => CanDraw = false, 900);
         }
 
         private static void Game_OnNotify(GameNotifyEventArgs args)
