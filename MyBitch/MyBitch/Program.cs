@@ -2,17 +2,23 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
+using EloBuddy.SDK.Rendering;
 using SharpDX;
 using Color = System.Drawing.Color;
 
 namespace MyBitch
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static readonly Vector3 place1 = new Vector3(6900f, 1800f, -189f);
+        private static readonly Vector3 place2 = new Vector3(7900f, 1800f, -189f);
+        private static readonly Vector3 place3 = new Vector3(7900f, 2000f, -189f);
+        private static readonly Vector3 place4 = new Vector3(6900f, 2000f, -189f);
+
+        // ReSharper disable once UnusedParameter.Local
+        private static void Main(string[] args)
         {
             Loading.OnLoadingComplete += Loading_OnLoadingComplete;
-            var place1 = new Vector3(6900f, 1800f, -189f);
             Player.IssueOrder(GameObjectOrder.MoveTo, place1);
         }
 
@@ -20,22 +26,16 @@ namespace MyBitch
         {
             Game.OnTick += Game_OnTick;
             Drawing.OnDraw += Drawing_OnDraw;
-            Player.OnSpawn += Player_OnSpawn;
-        }
-
-        private static void Player_OnSpawn(Obj_AI_Base sender)
-        {
-            var place1 = new Vector3(6900f, 1800f, -189f);
-            Player.IssueOrder(GameObjectOrder.MoveTo, place1);
         }
 
         private static void Game_OnTick(EventArgs args)
         {
-            var place1 = new Vector3(6900f, 1800f, -189f);
-            var place2 = new Vector3(7900f, 1800f, -189f);
-            var place3 = new Vector3(7900f, 2000f, -189f);
-            var place4 = new Vector3(6900f, 2000f, -189f);
+            if (Player.Instance.Distance(place1) < 1500)
+            {
+                Player.IssueOrder(GameObjectOrder.MoveTo, place1);
+            }
 
+            //Square
             if (Player.Instance.Distance(place1) < 10)
             {
                 Player.IssueOrder(GameObjectOrder.MoveTo, place2);
@@ -59,8 +59,7 @@ namespace MyBitch
 
         private static void Drawing_OnDraw(EventArgs args)
         {
-            var place1 = new Vector3(6900f, 1800f, -189f);
-            Drawing.DrawCircle(place1, 10f, Color.Red);
+            new Circle { Color = Color.Red, BorderWidth = 4f, Radius = 10 }.Draw(Player.Instance.Position);
         }
     }
 }
