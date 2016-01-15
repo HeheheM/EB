@@ -1,8 +1,8 @@
 Lucian R
-Maokai W need to fix
-Miss Fortune R need to fix
+Maokai W see if it works
+Miss Fortune R 
 Wukong R
-Mordekaiser Q need to fix the stages
+Mordekaiser Q 
 Mordekaiser W added 2nd stage Detonation
 Mordekaiser R
 Nidalee Q second form , Many changes needed
@@ -15,9 +15,6 @@ Poppy New R
 Quinn Q
 Quinn R
 RekSai E need to fix
-Renekton Q Fury need fix the stage
-Renekton W Fury need fix the stage
-Renekton E Fury need fix the stage
 Riven R Active Fix stage and math
 Sion W
 Skarner R
