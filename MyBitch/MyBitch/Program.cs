@@ -15,6 +15,8 @@ namespace MyBitch
         private static readonly Vector3 place3 = new Vector3(7900f, 2000f, -189f);
         private static readonly Vector3 place4 = new Vector3(6900f, 2000f, -189f);
 
+        private static Spell.Active Recall;
+
         // ReSharper disable once UnusedParameter.Local
         private static void Main(string[] args)
         {
@@ -29,6 +31,13 @@ namespace MyBitch
 
         private static void Game_OnTick(EventArgs args)
         {
+            var recall = Player.Instance.Spellbook.GetSpell(SpellSlot.Recall);
+            Recall = new Spell.Active(recall.Slot);
+            if (!Player.Instance.IsRecalling())
+            {
+                Recall.Cast();
+            }
+            /*
             if (Player.Instance.Distance(place1) > 2000)
             {
                 Player.IssueOrder(GameObjectOrder.MoveTo, place1);
@@ -54,6 +63,7 @@ namespace MyBitch
             {
                 Player.IssueOrder(GameObjectOrder.MoveTo, place1);
             }
+            */
         }
 
         private static void Drawing_OnDraw(EventArgs args)
