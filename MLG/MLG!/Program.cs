@@ -26,6 +26,7 @@ namespace MLG
         private static SoundPlayer OhMyGodSound;
         private static SoundPlayer FuckSound;
         private static SoundPlayer AkbarSound;
+        private static SoundPlayer DunkSound;
         #endregion Sounds
 
         static void Main(string[] args)
@@ -50,6 +51,9 @@ namespace MLG
             FuckSound = new SoundPlayer(Resource1.fuck);
 
             AkbarSound = new SoundPlayer(Resource1.akbar);
+
+            DunkSound = new SoundPlayer(Resource1.dunk);
+
             #endregion Sounds
 
             #region Images
@@ -74,6 +78,7 @@ namespace MLG
         {
             var caster = sender as AIHeroClient;
             var target = args.Target as AIHeroClient;
+
             if (caster == null || target == null || sender.Distance(Player.Instance) > 1500) return;
 
             HitMarkPosition = args.Target.Position.WorldToScreen();
@@ -84,6 +89,14 @@ namespace MLG
             if (args.Source.IsMe && hero!= null && args.Target.IsEnemy)
             {
                 AkbarSound.Play();
+            }
+  
+            if (hero != null && sender.IsVisible && !caster.Spellbook.GetSpell(SpellSlot.R).IsReady)
+            {
+                if (hero.Hero == Champion.JarvanIV || hero.Hero == Champion.Darius || hero.Hero == Champion.Aatrox)
+                {
+                    DunkSound.Play();
+                }
             }
             Core.DelayAction(() => CanDrawHitMarker = false, 200);
         }
@@ -135,14 +148,6 @@ namespace MLG
         {
             var hero = sender as AIHeroClient;
             if (hero == null)return;
-
-            var AkbarSpell = AkbarSpells.Spells.FirstOrDefault(
-                    x =>
-                        x.Hero == hero.Hero && args.Slot == x.Slot);
-            if (AkbarSpell != null)
-            {
-                
-            }
         }
     }
 }
