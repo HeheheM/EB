@@ -10,6 +10,7 @@ namespace KA_Activator
     {
         static void Main(string[] args)
         {
+             Loading.OnLoadingComplete += delegate
         }
     }
 }
